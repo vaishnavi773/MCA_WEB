@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String and Math Object Functions in JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #007BFF;
+        }
+        .example {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        .output {
+            font-weight: bold;
+            color: #008000;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Predefined String and Math Functions in JavaScript</h1>
+
+    <section>
+        <h2>String Object Functions</h2>
+        
+        <!-- String length -->
+        <div class="example">
+            <h3>1. String Length</h3>
+            <p>Function: <code>string.length</code></p>
+            <p><strong>Example:</strong></p>
+            <p><code>let str = "Hello, World!";</code></p>
+            <p><code>str.length</code> returns the length of the string.</p>
+            <p class="output">Output: <script>let str = "Hello, World!"; document.write(str.length);</script></p>
+        </div>
+        
+        <!-- String toUpperCase -->
+        <div class="example">
+            <h3>2. toUpperCase()</h3>
+            <p>Function: <code>string.toUpperCase()</code></p>
+            <p><strong>Example:</strong></p>
+            <p><code>let str = "hello";</code></p>
+            <p><code>str.toUpperCase()</code> converts the string to uppercase.</p>
+            <p class="output">Output: <script>let str1 = "hello"; document.write(str1.toUpperCase());</script></p>
+        </div>
+        
+        <!-- String toLowerCase -->
+        <div class="example">
+            <h3>3. toLowerCase()</h3>
+            <p>Function: <code>string.toLowerCase()</code></p>
+            <p><strong>Example:</strong></p>
+            <p><code>let str = "HELLO";</code></p>
+            <p><code>str.toLowerCase()</code> converts the string to lowercase.</p>
+            <p class="output">Output: <script>let str2 = "HELLO"; document.write(str2.toLowerCase());</script></p>
+        </div>
+
+        <!-- String indexOf -->
+        <div class="example">
+            <h3>4. indexOf()</h3>
+            <p>Function: <code>string.indexOf(searchValue)</code></p>
+            <p><strong>Example:</strong></p>
+            <p><code>let str = "JavaScript is fun";</code></p>
+            <p><code>str.indexOf("fun")</code> returns the index of the first occurrence of the substring "fun".</p>
+            <p class="output">Output: <script>let str3 = "JavaScript is fun"; document.write(str3.indexOf("fun"));</script></p>
+        </div>
+
+        <!-- String slice -->
+        <div class="example">
+            <h3>5. slice()</h3>
+            <p>Function: <code>string.slice(start, end)</code></p>
+            <p><strong>Example:</strong></p>
+            <p><code>let str = "Hello, World!";</code></p>
+            <p><code>str.slice(7, 12)</code> returns a part of the string starting from index 7 to 12 (excluding 12).</p>
+            <p class="output">Output: <script>let str4 = "Hello, World!"; document.write(str4.slice(7, 12));</script></p>
+        </div>
+        
+    </section>
+
+    <section>
+        <h2>Math Object Functions</h2>
+        
+        <!-- Math PI -->
+        <div class="example">
+            <h3>1. Math.PI</h3>
+            <p>Function: <code>Math.PI</code></p>
+            <p><strong>Example:</strong></p>
+            <p><code>Math.PI</code> returns the value of Pi.</p>
+            <p class="output">Output: <script>document.write(Math.PI);</script></p>
+        </div>
+        
+        <!-- Math round -->
+        <div class="example">
+            <h3>2. Math.round()</h3>
+            <p>Function: <code>Math.round(number)</code></p>
+            <p><strong>Example:</strong></p>
+            <p><code>Math.round(4.6)</code> rounds the number to the nearest integer.</p>
+            <p class="output">Output: <script>document.write(Math.round(4.6));</script></p>
+        </div>
+        
+        <!-- Math random -->
+        <div class="example">
+            <h3>3. Math.random()</h3>
+            <p>Function: <code>Math.random()</code></p>
+            <p><strong>Example:</strong></p>
+            <p><code>Math.random()</code> returns a random number between 0 and 1.</p>
+            <p class="output">Output: <script>document.write(Math.random());</script></p>
+        </div>
+
+        <!-- Math max -->
+        <div class="example">
+            <h3>4. Math.max()</h3>
+            <p>Function: <code>Math.max(a, b, ...)</code></p>
+            <p><strong>Example:</strong></p>
+            <p><code>Math.max(10, 20, 5)</code> returns the largest number from the given arguments.</p>
+            <p class="output">Output: <script>document.write(Math.max(10, 20, 5));</script></p>
+        </div>
+
+        <!-- Math min -->
+        <div class="example">
+            <h3>5. Math.min()</h3>
+            <p>Function: <code>Math.min(a, b, ...)</code></p>
+            <p><strong>Example:</strong></p>
+            <p><code>Math.min(10, 20, 5)</code> returns the smallest number from the given arguments.</p>
+            <p class="output">Output: <script>document.write(Math.min(10, 20, 5));</script></p>
+        </div>
+
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+.external
+{
+	body {
+		background-color: powderblue;
+	}
+        h1{
+		color:blue;
+	}
+        h3{
+		color:pink;
+	}
+	p {
+		color:green;
+	}
+}

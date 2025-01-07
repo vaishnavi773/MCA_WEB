@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Image and Text Change on Hover</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #image {
+            width: 200px;
+            height: auto;
+            margin-top: 20px;
+            display: none; 
+            margin-left: auto; 
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div id="hoverArea">
+ <h2 id="text">Mouse over here !!</h2>
+    <img id="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBiAw_KzqBEA2aQmDZY42KRjQGS6LaO0FWvw&s" alt="Lotus Image">
+</div>
+
+<script>
+    const hoverArea = document.getElementById('hoverArea');
+    const text = document.getElementById('text');
+    const image = document.getElementById('image');
+
+    hoverArea.addEventListener('mouseover', () => {
+        text.textContent = 'Lotus';
+        image.style.display = 'block'; // Show the image on hover
+    });
+
+    hoverArea.addEventListener('mouseout', () => {
+        text.textContent = 'Mouse over here !!';
+        image.style.display = 'none'; // Hide the image when the hover ends
+    });
+</script>
+
+</body>
+</html>

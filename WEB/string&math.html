@@ -1,0 +1,183 @@
+<html>
+<head>
+    <title>JavaScript String and Math Functions</title>
+</head>
+<body>
+
+    <h1>String and Math Functions Example</h1>
+
+    <h2>String Functions</h2>
+    <p id="string0"></p>
+    <p id="string1"></p>
+    <p id="string2"></p>
+    <p id="string3"></p>
+    <p id="string4"></p>
+    <p id="string5"></p>
+
+    <h2>Math Functions</h2>
+    <p id="math0"></p>
+    <p id="math1"></p>
+    <p id="math2"></p>
+    <p id="math3"></p>
+    <p id="math4"></p>
+    <p id="math5"></p>
+
+    <script>
+	
+        // String Functions Example
+        let str = " Hello , World! ";
+	
+	// 1. Trim spaces from both ends of the string
+        let trimmedStr = str.trim();
+
+        // 2. Replace part of the string
+        let replacedStr = str.replace("World", "JavaScript");
+
+        // 3. Check if the string contains a word
+        let includesWord = str.includes("World");
+
+        // 4. Convert the string to lowercase
+        let lowerStr = str.toLowerCase();
+
+        // 5. Get a substring (characters from index 0 to 5)
+        let substr = str.substring(0, 5);
+
+        // Displaying string results
+	document.getElementById("string0").innerHTML = " String is :  '" +   str +   "'";
+        document.getElementById("string1").innerHTML = "Trim spaces from both ends of the string:  '" +   trimmedStr +   "'";
+        document.getElementById("string2").innerHTML = "Replace part of the string:  '" +   replacedStr + "'";
+        document.getElementById("string3").innerHTML = "Check if the string contains a word:  " +   includesWord;
+        document.getElementById("string4").innerHTML = "Convert the string to lowercase:  '" +   lowerStr + "'";
+        document.getElementById("string5").innerHTML = "Get a substring (characters from index 0 to 5):  '" +   substr + "'";
+
+        // Math Functions Example 
+        let num = 25;
+
+         // 1. Find the square root of a number 
+        let sqrtResult = Math.sqrt(num);
+
+        // 2. Generate a random number between 0 and 1 
+        let randomNumber = Math.random();
+
+        // 3. Round a number to the nearest integer 
+        let roundedNum = Math.round(9.6);
+
+        // 4. Find the maximum number from a list of numbers 
+        let maxNum = Math.max(1, 2, 3, 50, 100, 245);
+
+        // 5. Find the minimum number from a list of numbers 
+        let minNum = Math.min(1, 2, 3, 50, 100, 245);
+
+        // Displaying math results
+	document.getElementById("math0").innerHTML = "Number is:  " +   num;
+        document.getElementById("math1").innerHTML = "Square Root of 25:  " +   sqrtResult;
+        document.getElementById("math2").innerHTML = "A random number between 0 and 1 :  " +   randomNumber;
+        document.getElementById("math3").innerHTML = "Round a number to the nearest integer (9.6):  " +   roundedNum;
+        document.getElementById("math4").innerHTML = "The maximum number from a list of numbers  (1, 2, 3, 50, 100, 245) :  " +   maxNum;
+        document.getElementById("math5").innerHTML = "The minimum number from a list of numbers  (1, 2, 3, 50, 100, 245) :  " +   minNum;
+
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript String and Math Functions</title>
+</head>
+<body>
+
+    <h1>JavaScript String and Math Functions</h1>
+
+    <h2>String Functions</h2>
+
+    <h3>1. <code>charAt(index)</code></h3>
+    <p>Returns the character at a specific position in a string.</p>
+    <p>Example: <code>let str = "Hello";</code></p>
+    <p><code>str.charAt(1);</code> → "e"</p>
+
+    <h3>2. <code>concat()</code></h3>
+    <p>Combines two strings into one.</p>
+    <p>Example: <code>let str1 = "Hello";</code> and <code>let str2 = " World";</code></p>
+    <p><code>str1.concat(str2);</code> → "Hello World"</p>
+
+    <h3>3. <code>indexOf(substring)</code></h3>
+    <p>Finds the position of a word or letter in a string.</p>
+    <p>Example: <code>let str = "Hello World";</code></p>
+    <p><code>str.indexOf("World");</code> → 6</p>
+
+    <h3>4. <code>toLowerCase()</code></h3>
+    <p>Converts all letters in a string to lowercase.</p>
+    <p>Example: <code>let str = "HELLO";</code></p>
+    <p><code>str.toLowerCase();</code> → "hello"</p>
+
+    <h3>5. <code>toUpperCase()</code></h3>
+    <p>Converts all letters in a string to uppercase.</p>
+    <p>Example: <code>let str = "hello";</code></p>
+    <p><code>str.toUpperCase();</code> → "HELLO"</p>
+
+    <h3>6. <code>slice(start, end)</code></h3>
+    <p>Extracts a part of a string.</p>
+    <p>Example: <code>let str = "Hello World";</code></p>
+    <p><code>str.slice(0, 5);</code> → "Hello"</p>
+
+    <h3>7. <code>split(separator)</code></h3>
+    <p>Splits a string into an array of words.</p>
+    <p>Example: <code>let str = "apple,banana,cherry";</code></p>
+    <p><code>str.split(",");</code> → ["apple", "banana", "cherry"]</p>
+
+    <h2>Math Functions</h2>
+
+    <h3>1. <code>Math.abs(x)</code></h3>
+    <p>Returns the absolute (positive) value of a number.</p>
+    <p>Example: <code>Math.abs(-5);</code> → 5</p>
+
+    <h3>2. <code>Math.ceil(x)</code></h3>
+    <p>Rounds a number up to the nearest whole number.</p>
+    <p>Example: <code>Math.ceil(4.2);</code> → 5</p>
+
+    <h3>3. <code>Math.floor(x)</code></h3>
+    <p>Rounds a number down to the nearest whole number.</p>
+    <p>Example: <code>Math.floor(4.7);</code> → 4</p>
+
+    <h3>4. <code>Math.max(...numbers)</code></h3>
+    <p>Finds the largest number from a list of numbers.</p>
+    <p>Example: <code>Math.max(10, 20, 30);</code> → 30</p>
+
+    <h3>5. <code>Math.min(...numbers)</code></h3>
+    <p>Finds the smallest number from a list of numbers.</p>
+    <p>Example: <code>Math.min(10, 20, 30);</code> → 10</p>
+
+    <h3>6. <code>Math.random()</code></h3>
+    <p>Generates a random number between 0 and 1.</p>
+    <p>Example: <code>Math.random();</code> → (random number between 0 and 1)</p>
+
+    <h3>7. <code>Math.pow(base, exponent)</code></h3>
+    <p>Raises a number to a specific power.</p>
+    <p>Example: <code>Math.pow(2, 3);</code> → 8</p>
+
+    <h3>8. <code>Math.sqrt(x)</code></h3>
+    <p>Calculates the square root of a number.</p>
+    <p>Example: <code>Math.sqrt(16);</code> → 4</p>
+
+</body>
+</html>-->

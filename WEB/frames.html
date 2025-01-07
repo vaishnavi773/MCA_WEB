@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frames Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .nav-frame {
+            width: 25%;
+            height: 500px;
+            border: 1px solid black;
+        }
+        .main-frame {
+            width: 70%;
+            height: 500px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Frames Example Page</h1>
+
+    <h2>Floating Frame (iFrame)</h2>
+    <iframe src="https://www.example.com" title="Example Website" width="100%" height="300"></iframe>
+
+    <h2>Navigation Frame (Deprecated)</h2>
+    <p>This is how frames used to be used for navigation in older versions of HTML. The example below may not work in modern browsers, but the code is for learning purposes.</p>
+
+    <iframe src="navigation.html" name="nav" class="nav-frame"></iframe>
+    <iframe src="main.html" name="main" class="main-frame"></iframe>
+    
+    <h2>Mixed Frame</h2>
+    <div class="container">
+        <iframe src="https://www.wikipedia.org" title="Wikipedia" class="nav-frame"></iframe>
+        <iframe src="https://www.google.com" title="Google" class="main-frame"></iframe>
+    </div>
+
+</body>
+</html>
