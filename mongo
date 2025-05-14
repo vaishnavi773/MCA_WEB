@@ -1,0 +1,235 @@
+mca@localhost ~]$ mongo
+Enter your MongoDB username: 24mca59
+Enter your MongoDB password: 
+Current Mongosh Log ID:	6824533206cc0e6620d861df
+Connecting to:		mongodb://<credentials>@172.20.3.1:27017/24mca59_db?authSource=24mca59_db&directConnection=true&appName=mongosh+2.5.0
+Using MongoDB:		6.0.23
+Using Mongosh:		2.5.0
+mongosh 2.5.1 is available for download: https://www.mongodb.com/try/download/shell
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+24mca59_db> db
+24mca59_db
+24mca59_db> db.createCollection("order")
+{ ok: 1 }
+24mca59_db> show collections
+order
+24mca59_db> db.orders.insertOne({order_no:"o1",year:2020,paid:"Y",cost:{price:30,currency:"INR"},items:[{pno:"p1",colors:["blue","black"],quatity:15}],delivery_days:5}) 
+{
+  acknowledged: true,
+  insertedId: ObjectId('6824568706cc0e6620d861e0')
+}
+24mca59_db> db.orders.find()
+[
+  {
+    _id: ObjectId('6824568706cc0e6620d861e0'),
+    order_no: 'o1',
+    year: 2020,
+    paid: 'Y',
+    cost: { price: 30, currency: 'INR' },
+    items: [ { pno: 'p1', colors: [ 'blue', 'black' ], quatity: 15 } ],
+    delivery_days: 5
+  }
+24mca59_db> db.orders.insert({order_no:"O2",year:2020,paid:"Y",cost:{price:13,currency:"DLR"},items:[{pno:"P2",colors:["white"],quantity:4},{pno:"p3",color:["white","black"],quatity:1}]Delivery_days:4})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:173)
+
+> 1 | db.orders.insert({order_no:"O2",year:2020,paid:"Y",cost:{price:13,currency:"DLR"},items:[{pno:"P2",colors:["white"],quantity:4},{pno:"p3",color:["white","black"],quatity:1}]Delivery_days:4})
+    |                                                                                                                                                                              ^
+  2 |
+
+24mca59_db> db.orders.insertOne({order_no:"O2",year:2020,paid:"Y",cost:{price:13,currency:"DLR"},items:[{pno:"P2",colors:["white"],quantity:4},{pno:"p3",color:["white","black"],quatity:1}]Delivery_days:4})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:176)
+
+> 1 | db.orders.insertOne({order_no:"O2",year:2020,paid:"Y",cost:{price:13,currency:"DLR"},items:[{pno:"P2",colors:["white"],quantity:4},{pno:"p3",color:["white","black"],quatity:1}]Delivery_days:4})
+    |                                                                                                                                                                                 ^
+  2 |
+
+24mca59_db> db.orders.insertOne({order_no:"O2",year:2020,paid:"Y",cost:{price:13,currency:"DLR"},items:[{pno:"P2",colors:["white"],quantity:4},{pno:"p3",colors:["white","black"],quatity:1}]Delivery_days:4})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:177)
+
+> 1 | db.orders.insertOne({order_no:"O2",year:2020,paid:"Y",cost:{price:13,currency:"DLR"},items:[{pno:"P2",colors:["white"],quantity:4},{pno:"p3",colors:["white","black"],quatity:1}]Delivery_days:4})
+    |                                                                                                                                                                                  ^
+  2 |
+
+24mca59_db> db.orders.insertOne({order_no:"o2",year:2020,paid:"Y",cost:{price:13,currency:"DLR"},items:[{pno:"p2",colors:["white"],quatity:4},{pno:"3",colors:["white","black"],quatity:1}],delivery_days:4})
+{
+  acknowledged: true,
+  insertedId: ObjectId('68245c4806cc0e6620d861e1')
+}
+24mca59_db> db.orders.find()
+[
+  {
+    _id: ObjectId('6824568706cc0e6620d861e0'),
+    order_no: 'o1',
+    year: 2020,
+    paid: 'Y',
+    cost: { price: 30, currency: 'INR' },
+    items: [ { pno: 'p1', colors: [ 'blue', 'black' ], quatity: 15 } ],
+    delivery_days: 5
+  },
+  {
+    _id: ObjectId('68245c4806cc0e6620d861e1'),
+    order_no: 'o2',
+    year: 2020,
+    paid: 'Y',
+    cost: { price: 13, currency: 'DLR' },
+    items: [
+      { pno: 'p2', colors: [ 'white' ], quatity: 4 },
+      { pno: '3', colors: [ 'white', 'black' ], quatity: 1 }
+    ],
+    delivery_days: 4
+  }
+]
+24mca59_db> db.orders.insertOne({order_no:"o3",year:2018,paid:"N",cost:{price:33,currency:"EUR"},items:[{pno:"p3",colors:["blue","black"],quatity:4}],delivery_days:4})
+{
+  acknowledged: true,
+  insertedId: ObjectId('68245cac06cc0e6620d861e2')
+}
+24mca59_db> db.orders.find()
+[
+  {
+    _id: ObjectId('6824568706cc0e6620d861e0'),
+    order_no: 'o1',
+    year: 2020,
+    paid: 'Y',
+    cost: { price: 30, currency: 'INR' },
+    items: [ { pno: 'p1', colors: [ 'blue', 'black' ], quatity: 15 } ],
+    delivery_days: 5
+  },
+  {
+    _id: ObjectId('68245c4806cc0e6620d861e1'),
+    order_no: 'o2',
+    year: 2020,
+    paid: 'Y',
+    cost: { price: 13, currency: 'DLR' },
+    items: [
+      { pno: 'p2', colors: [ 'white' ], quatity: 4 },
+      { pno: '3', colors: [ 'white', 'black' ], quatity: 1 }
+    ],
+    delivery_days: 4
+  },
+  {
+    _id: ObjectId('68245cac06cc0e6620d861e2'),
+    order_no: 'o3',
+    year: 2018,
+    paid: 'N',
+    cost: { price: 33, currency: 'EUR' },
+    items: [ { pno: 'p3', colors: [ 'blue', 'black' ], quatity: 4 } ],
+    delivery_days: 4
+  }
+]
+24mca59_db> db.orders.insertOne({order_no:"o4",year:2017,paid:"Y",cost:{price:17,currency:"DLR"},items:[{pno:"p2",colors:["pink","white"],quatity:14},{pno:"p4",colors:["white"],quatity:1}],delivery_days:2})
+{
+  acknowledged: true,
+  insertedId: ObjectId('68245d6b06cc0e6620d861e3')
+}
+24mca59_db> db.orders.find()
+[
+  {
+    _id: ObjectId('6824568706cc0e6620d861e0'),
+    order_no: 'o1',
+    year: 2020,
+    paid: 'Y',
+    cost: { price: 30, currency: 'INR' },
+    items: [ { pno: 'p1', colors: [ 'blue', 'black' ], quatity: 15 } ],
+    delivery_days: 5
+  },
+  {
+    _id: ObjectId('68245c4806cc0e6620d861e1'),
+    order_no: 'o2',
+    year: 2020,
+    paid: 'Y',
+    cost: { price: 13, currency: 'DLR' },
+    items: [
+      { pno: 'p2', colors: [ 'white' ], quatity: 4 },
+      { pno: '3', colors: [ 'white', 'black' ], quatity: 1 }
+    ],
+    delivery_days: 4
+  },
+  {
+    _id: ObjectId('68245cac06cc0e6620d861e2'),
+    order_no: 'o3',
+    year: 2018,
+    paid: 'N',
+    cost: { price: 33, currency: 'EUR' },
+    items: [ { pno: 'p3', colors: [ 'blue', 'black' ], quatity: 4 } ],
+    delivery_days: 4
+  },
+  {
+    _id: ObjectId('68245d6b06cc0e6620d861e3'),
+    order_no: 'o4',
+    year: 2017,
+    paid: 'Y',
+    cost: { price: 17, currency: 'DLR' },
+    items: [
+      { pno: 'p2', colors: [ 'pink', 'white' ], quatity: 14 },
+      { pno: 'p4', colors: [ 'white' ], quatity: 1 }
+    ],
+    delivery_days: 2
+  }
+]
+24mca59_db> db.orders.insertOne({order_no:"o5",year:2020,paid:"Y",cost:{price:19,currency:"INR"},items:[{pno:"p1",quatity:15}],delivery_days:3})
+{
+  acknowledged: true,
+  insertedId: ObjectId('68245dd806cc0e6620d861e4')
+}
+24mca59_db> db.orders.find()
+[
+  {
+    _id: ObjectId('6824568706cc0e6620d861e0'),
+    order_no: 'o1',
+    year: 2020,
+    paid: 'Y',
+    cost: { price: 30, currency: 'INR' },
+    items: [ { pno: 'p1', colors: [ 'blue', 'black' ], quatity: 15 } ],
+    delivery_days: 5
+  },
+  {
+    _id: ObjectId('68245c4806cc0e6620d861e1'),
+    order_no: 'o2',
+    year: 2020,
+    paid: 'Y',
+    cost: { price: 13, currency: 'DLR' },
+    items: [
+      { pno: 'p2', colors: [ 'white' ], quatity: 4 },
+      { pno: '3', colors: [ 'white', 'black' ], quatity: 1 }
+    ],
+    delivery_days: 4
+  },
+  {
+    _id: ObjectId('68245cac06cc0e6620d861e2'),
+    order_no: 'o3',
+    year: 2018,
+    paid: 'N',
+    cost: { price: 33, currency: 'EUR' },
+    items: [ { pno: 'p3', colors: [ 'blue', 'black' ], quatity: 4 } ],
+    delivery_days: 4
+  },
+  {
+    _id: ObjectId('68245d6b06cc0e6620d861e3'),
+    order_no: 'o4',
+    year: 2017,
+    paid: 'Y',
+    cost: { price: 17, currency: 'DLR' },
+    items: [
+      { pno: 'p2', colors: [ 'pink', 'white' ], quatity: 14 },
+      { pno: 'p4', colors: [ 'white' ], quatity: 1 }
+    ],
+    delivery_days: 2
+  },
+  {
+    _id: ObjectId('68245dd806cc0e6620d861e4'),
+    order_no: 'o5',
+    year: 2020,
+    paid: 'Y',
+    cost: { price: 19, currency: 'INR' },
+    items: [ { pno: 'p1', quatity: 15 } ],
+    delivery_days: 3
+  }
+]
+24mca59_db> 
+
